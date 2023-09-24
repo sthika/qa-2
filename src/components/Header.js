@@ -18,8 +18,8 @@ const Header = () => {
           <NavLink to='/collections' className='header__link'>
             Collections
           </NavLink>
-          <NavLink to='/collections' className='header__link'>
-            Some link
+          <NavLink to='/about' className='header__link'>
+            About Us
           </NavLink>
           <NavLink to='/faq' className='header__link'>
             FAQ

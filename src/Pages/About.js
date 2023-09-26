@@ -3,7 +3,7 @@ import Button from '../components/Button';
 
 const About = () => {
   return (
-    <section className='about section'>
+    <section className='about'>
       <div className='container'>
         <h2 className='section__title'>About Us</h2>
         <p className='section__subtitle'>

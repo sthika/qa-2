@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
+import CollectionMobile from '../components/CollectionMobile';
 
 const Collection = () => {
   const [users, setUsers] = useState([]);
@@ -27,12 +28,16 @@ const Collection = () => {
     getAlbum(id);
   }, [id]);
 
+  const getAuthor = () => {
+    return users.find((el) => el.id === id)
+  }
 
-  let author = users.find((el) => el.id === id)
 
 
+
+  console.log(id)
   return (
-    <section className='collection section'>
+    <section className='collection'>
       <div className='container'>
         <h2 className='section__title'>Collection</h2>
         <p className='section__subtitle'>
@@ -52,9 +57,11 @@ const Collection = () => {
           ))}
         </div>
 
+        <CollectionMobile users={users} setId={setId} id={id}/>
+
         <div className='collection__cards'>
           {album.map((el) => (
-            <Card photo={el} author={author} />
+            <Card photo={el} author={getAuthor()} />
           ))}
         </div>
       </div>

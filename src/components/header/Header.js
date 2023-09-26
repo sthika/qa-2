@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Button from './Button';
-import Input from './Input';
+import Button from '../Button';
+import Input from '../Input';
+import HeaderMobile from '../header/HeaderMobile';
+
 
 const Header = () => {
   return (
@@ -26,6 +28,8 @@ const Header = () => {
 
           <Button text= {"Log in"}/>
         </nav>
+
+        <HeaderMobile />
 
       </div>
     </header>

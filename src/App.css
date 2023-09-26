@@ -96,6 +96,13 @@ button {
   background: var(--btn-color);
   padding: 10px 20px;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
 
 .section__title {
   color: var(--main-text-color);
@@ -161,12 +168,82 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-a {
-  text-decoration: none;
-  color: inherit;
+.header__nav-mobile {
+  display: none;
 }
-li {
-  list-style: none;
+
+/* Position and sizing of burger button */
+#outer-container {
+  display: none;
+}
+.bm-burger-button {
+  display: none;
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 20px;
+  top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #fff;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: rgba(255, 255, 255, 0.50);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 50px;
+  width: 50px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  left: 0px;
+  z-index: 1100;
+  width: 100%;
+  top: 0px;
+  height: 100%;
+  transition: all 0.5s ease 0s;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--body-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+
+}
+
+/* Individual item */
+.bm-item {
+margin-bottom: 10px;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
 }
 
 /* main */
@@ -320,6 +397,7 @@ li {
   width: 154px;
 }
 
+/* collection */
 .collection {
   margin: 200px 0 200px;
 }
@@ -414,6 +492,7 @@ li {
   margin-top: 100px;
 }
 
+/* media */
 @media screen and (max-width: 1200px) {
   .container {
     max-width: 1030px;
@@ -437,11 +516,16 @@ li {
   .container {
     max-width: 630px;
   }
-  .header__input {
-    display: none;
-  }
+  .header__input,
   .header__nav {
     display: none;
+  }
+
+  .header__nav-mobile,
+  .bm-burger-button,
+  #outer-container
+   {
+    display: block;
   }
   .main {
     margin: 40px 0 70px;
@@ -454,23 +538,19 @@ li {
     line-height: 25px;
   }
 
-  .partners {
+  .partners,
+  .about {
     margin: 70px 0 70px;
   }
 
-  .about {
-    margin: 70px 0 100px;
-  }
   .about__image {
     height: 400px;
   }
-  .collection{
+  .collection,
+  .footer {
     margin: 100px 0 100px;
   }
 
-  .footer {
-    margin: 100px 0 50px;
-  }
   .footer__wrapper {
     grid-template-columns: 50% 30%;
     gap: 15px;
@@ -481,6 +561,7 @@ li {
   .footer__contact {
     gap: 10px;
   }
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -535,8 +616,8 @@ li {
   .footer__contact {
     grid-column: 3/4;
   }
+  
 }
-
 
 @media screen and (max-width: 390px) {
   .container {

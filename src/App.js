@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Collection from './Pages/Collection';
+import Home from './pages/Home';
+import About from './pages/About';
+import Collection from './pages/Collection';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/collections' element={<Collection />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

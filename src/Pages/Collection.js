@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Card from '../components/Card';
 
 const Collection = () => {
   const [users, setUsers] = useState([]);
+
   const getUsers = async () => {
     let { data } = await axios(`https://jsonplaceholder.typicode.com/users`);
     setUsers(data);
@@ -11,6 +13,22 @@ const Collection = () => {
   useEffect(() => {
     getUsers();
   }, []);
+  const [id, setId] = useState(1);
+
+  const [album, setAlbum] = useState([]);
+  const getAlbum = async (id) => {
+    let { data } = await axios(
+      `https://jsonplaceholder.typicode.com/albums/${id}/photos`
+    );
+    setAlbum(data);
+  };
+
+  useEffect(() => {
+    getAlbum(id);
+  }, [id]);
+
+
+  let author = users.find((el) => el.id === id)
 
 
   return (
@@ -21,10 +39,22 @@ const Collection = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
-        <div className='collections__types'>
+        <div className='collection__types'>
           {/* Вместо категорий использовала юзеров */}
           {users.map((user) => (
-            <a className='collection__user'>{user.name}</a>
+            <button
+              className='collection__user'
+              onClick={() => {
+                setId(user.id);
+              }}>
+              {user.name}
+            </button>
+          ))}
+        </div>
+
+        <div className='collection__cards'>
+          {album.map((el) => (
+            <Card photo={el} author={author} />
           ))}
         </div>
       </div>

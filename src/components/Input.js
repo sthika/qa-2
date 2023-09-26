@@ -1,5 +1,4 @@
 import React from 'react';
-import search from '../assets/search.png';
 
 const Input = () => {
   return (

@@ -87,7 +87,7 @@ const Main = () => {
         </div>
       </div>
     </div>
-  </main>
+     </main>
   )
 }
 

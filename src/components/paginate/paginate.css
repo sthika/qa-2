@@ -1,0 +1,8 @@
+
+.collection__pagination-list {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+}

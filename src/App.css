@@ -419,6 +419,12 @@ margin-bottom: 10px;
   background: var(--btn-color);
 
 }
+.collection__perpage {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+
+}
 .collection__cards {
   display: flex;
   flex-wrap: wrap;

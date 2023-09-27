@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import CollectionMobile from '../components/CollectionMobile';
+import Paginate from '../components/paginate/Paginate';
 
 const Collection = () => {
   const [users, setUsers] = useState([]);
@@ -39,6 +40,18 @@ const Collection = () => {
     setId(user.id);
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(3);
+  const lastIndex = perPage * currentPage;
+  const firstIndex = lastIndex - perPage;
+
+  const currentCards = album.slice(firstIndex, lastIndex);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handlePerPage = (e) => {
+    setPerPage(e.target.value);
+  };
+
   console.log(id);
   return (
     <section className='collection'>
@@ -52,7 +65,7 @@ const Collection = () => {
             <button
               id={idx}
               className={
-                active ===  idx 
+                active === idx
                   ? 'collection__user-active collection__user'
                   : 'collection__user'
               }
@@ -67,9 +80,25 @@ const Collection = () => {
         <CollectionMobile users={users} setId={setId} id={id} />
 
         <div className='collection__cards'>
-          {album.map((el) => (
+          {currentCards.map((el) => (
             <Card photo={el} author={getAuthor()} />
           ))}
+        </div>
+
+        <Paginate
+          perPage={perPage}
+          totalCard={album.length}
+          paginate={paginate}
+          currentPage={currentPage} />
+
+<div className='collection__perpage'>
+          <label>Элементов на странцие:</label>
+
+          <select value={perPage} onChange={handlePerPage}>
+            <option value='3'>3</option>
+            <option value='6'>6</option>
+            <option value='12'>12</option>
+          </select>
         </div>
       </div>
     </section>

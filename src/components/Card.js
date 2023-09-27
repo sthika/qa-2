@@ -16,7 +16,7 @@ const Card = ({ photo, author }) => {
         <img src={photo.url} alt={photo.title} />
       </div>
       <div className='collection__desc'>
-        <p className='collection__author'>@{author.name}</p>
+        <p className='collection__author'>@{author?.name}</p>
         <p className='collection__price'>{getPrice(1,100)} $</p>
         <p className='collection__title'>{photo.title}</p>
       </div>

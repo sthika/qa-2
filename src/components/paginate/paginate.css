@@ -1,8 +1,19 @@
 
-.collection__pagination-list {
+.pagination-list {
     display: flex;
     width: 80%;
     justify-content: space-between;
     align-items: center;
     margin: 50px auto;
+    gap: 10px;
+}
+.pagination__number,
+.active__paginate {
+    width: 10%;
+    border-radius: 10px;
+    text-align: center;
+
+}
+.active__paginate {
+    background: var(--btn-color);
 }

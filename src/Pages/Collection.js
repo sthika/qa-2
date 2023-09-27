@@ -15,6 +15,7 @@ const Collection = () => {
   useEffect(() => {
     getUsers();
   }, []);
+
   const [id, setId] = useState(1);
 
   const [album, setAlbum] = useState([]);
@@ -33,10 +34,11 @@ const Collection = () => {
     return users.find((el) => el.id === id);
   };
 
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState(0);
 
   const handleClick = (event, user) => {
     setActive(Number(event.target.id));
+    console.log(event.target.id)
     setId(user.id);
   };
 
@@ -49,10 +51,9 @@ const Collection = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handlePerPage = (e) => {
-    setPerPage(e.target.value);
+    setPerPage(Number(e.target.value));
   };
 
-  console.log(id);
   return (
     <section className='collection'>
       <div className='container'>
@@ -89,9 +90,10 @@ const Collection = () => {
           perPage={perPage}
           totalCard={album.length}
           paginate={paginate}
-          currentPage={currentPage} />
+          currentPage={currentPage}
+        />
 
-<div className='collection__perpage'>
+        <div className='collection__perpage'>
           <label>Элементов на странцие:</label>
 
           <select value={perPage} onChange={handlePerPage}>

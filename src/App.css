@@ -89,6 +89,12 @@ h3 {
   font-size: var(--h3-font-size);
 }
 
+select {
+  background: var(--btn-color-gray);
+  color: var(--body-font);
+  border-radius: 10px;
+  padding: 5px;
+}
 button {
   cursor: pointer;
   border: none;
@@ -423,7 +429,7 @@ margin-bottom: 10px;
   display: flex;
   gap: 15px;
   justify-content: center;
-
+  align-items: center;
 }
 .collection__cards {
   display: flex;
@@ -602,7 +608,10 @@ margin-bottom: 10px;
     display: none;
   }
   .collection__types-mobile {
-    display: block;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer__wrapper {

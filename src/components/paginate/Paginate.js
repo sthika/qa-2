@@ -10,7 +10,7 @@ const Paginate = ({ perPage, totalCard, paginate, currentPage }) => {
     pageNumber.push(i);
   }
   return (
-      <ul className='collection__pagination-list'>
+      <ul className='pagination-list'>
         {currentPage > 1 ? (
           <li onClick={() => setActivePaginate(activePaginate - 1)}>
             <button onClick={() => paginate(currentPage - 1)}> prev </button>

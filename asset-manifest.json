@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/qa-2/static/css/main.53dc09fb.css",
-    "main.js": "/qa-2/static/js/main.5fa67523.js",
+    "main.css": "/qa-2/static/css/main.ef532e5d.css",
+    "main.js": "/qa-2/static/js/main.cfcba7e7.js",
     "static/media/Blockchain_logo.svg": "/qa-2/static/media/Blockchain_logo.d86bb3de86ae4476bc3515dbfc4da77c.svg",
     "static/media/Ethereum_logo.svg": "/qa-2/static/media/Ethereum_logo.16ad6b1b16d565d959074ff067b310bb.svg",
     "static/media/Binance_logo.svg": "/qa-2/static/media/Binance_logo.2b9bfaf16d4cf5bb45822a91248411f0.svg",
     "index.html": "/qa-2/index.html",
-    "main.53dc09fb.css.map": "/qa-2/static/css/main.53dc09fb.css.map",
-    "main.5fa67523.js.map": "/qa-2/static/js/main.5fa67523.js.map"
+    "main.ef532e5d.css.map": "/qa-2/static/css/main.ef532e5d.css.map",
+    "main.cfcba7e7.js.map": "/qa-2/static/js/main.cfcba7e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.53dc09fb.css",
-    "static/js/main.5fa67523.js"
+    "static/css/main.ef532e5d.css",
+    "static/js/main.cfcba7e7.js"
   ]
 }

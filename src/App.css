@@ -638,6 +638,13 @@ margin-bottom: 10px;
   .container {
     max-width: 330px;
   }
+  .collection__card {
+    width: 100%;
+  }
+  .collection__image {
+    width: 100%;
+    height: 300px;
+  }
   .footer__contact {
     grid-column: 1/4;
   }

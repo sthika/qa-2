@@ -415,7 +415,7 @@ margin-bottom: 10px;
   padding: 5px 50px;
   border-radius: 10px;
 }
-.collection__user:active {
+.collection__user-active {
   background: var(--btn-color);
 
 }

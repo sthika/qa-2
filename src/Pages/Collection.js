@@ -29,35 +29,42 @@ const Collection = () => {
   }, [id]);
 
   const getAuthor = () => {
-    return users.find((el) => el.id === id)
-  }
+    return users.find((el) => el.id === id);
+  };
 
+  const [active, setActive] = useState('');
 
+  const handleClick = (event, user) => {
+    setActive(Number(event.target.id));
+    setId(user.id);
+  };
 
-
-  console.log(id)
+  console.log(id);
   return (
     <section className='collection'>
       <div className='container'>
         <h2 className='section__title'>Collection</h2>
-        <p className='section__subtitle'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
+        <p className='section__subtitle'>Select an author</p>
 
         <div className='collection__types'>
           {/* Вместо категорий использовала юзеров */}
-          {users.map((user) => (
+          {users.map((user, idx) => (
             <button
-              className='collection__user'
-              onClick={() => {
-                setId(user.id);
+              id={idx}
+              className={
+                active ===  idx 
+                  ? 'collection__user-active collection__user'
+                  : 'collection__user'
+              }
+              onClick={(e) => {
+                handleClick(e, user);
               }}>
               {user.name}
             </button>
           ))}
         </div>
 
-        <CollectionMobile users={users} setId={setId} id={id}/>
+        <CollectionMobile users={users} setId={setId} id={id} />
 
         <div className='collection__cards'>
           {album.map((el) => (

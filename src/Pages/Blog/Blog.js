@@ -81,11 +81,6 @@ const Blog = () => {
           Add new
         </button>
         </div>
-
-
-
-
-
         
 
         <div className='blog__posts'>

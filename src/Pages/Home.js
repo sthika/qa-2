@@ -2,6 +2,7 @@ import React from 'react';
 import Main from '../components/Main';
 import Partners from '../components/Partners';
 import About from './About';
+import Faq from '../components/faq/Faq';
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <Main />
       <Partners />
       <About />
+      <Faq />
     </>
   );
 };

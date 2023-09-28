@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Contact from './components/contact/Contact';
 import Blog from './pages/Blog/Blog';
 import Cart from './components/cart/Cart';
+import Partners from './components/Partners';
 
 export const ProductsContext = createContext({});
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/collections' element={<Collection />} />
+            
             <Route path='/blog' element={<Blog />} />
             <Route path='/cart' element={<Cart/>} />
           </Routes>

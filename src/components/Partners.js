@@ -6,7 +6,7 @@ import blockchain from '../assets/Blockchain_logo.svg';
 
 const Partners = () => {
   return (
-    <section className='partners'>
+    <section id='partners' className='partners'>
       <div className='container partners__wrapper'>
         <div className='partners__logo partners__logo-binance'>
           <img src={binance} alt='' />

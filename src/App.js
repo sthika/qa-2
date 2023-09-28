@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
@@ -8,20 +8,25 @@ import Footer from './components/Footer';
 import Contact from './components/contact/Contact';
 import Blog from './pages/Blog/Blog';
 
+export const ProductsContext = createContext({});
 function App() {
+  const existingProducts = JSON.parse(localStorage.getItem('products')) || [];
+  const [products, setProducts] = useState(existingProducts);
   return (
-    <div className='App'>
-      <Router basename={'/qa-2'}>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/collections' element={<Collection />} />
-          <Route path='/blog' element={<Blog />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <ProductsContext.Provider value={{ products, setProducts }}>
+      <div className='App'>
+        <Router basename={'/qa-2'}>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/collections' element={<Collection />} />
+            <Route path='/blog' element={<Blog />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </ProductsContext.Provider>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CollectionMobile = ({ users, setId, id }) => {
-  console.log(id);
+
   return (
     <div className='collection__types-mobile'>
       <label for='users'>Choose an author:</label>

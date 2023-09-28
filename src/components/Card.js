@@ -1,15 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Button from './Button';
 import { ProductsContext } from '../App';
 
 const Card = ({ photo, author }) => {
   const { setProducts } = useContext(ProductsContext);
 
+  const [cardPrice, setCardPrice] = useState(0)
   function getPrice(min, max) {
     let price = Math.random() * (max - min) + min;
     photo.price = Math.round(price);
-    return Math.round(price);
+    return setCardPrice(Math.round(price))
   }
+
+
+  useEffect(() => {
+    getPrice(1,100)
+  }, [])
+  
 
   const handleCardlBtn = (e) => {
     console.log('card click');
@@ -42,7 +49,7 @@ const Card = ({ photo, author }) => {
       </div>
       <div className='collection__desc'>
         <p className='collection__author'>@{author?.name}</p>
-        <p className='collection__price'>{getPrice(1, 100)} $</p>
+        <p className='collection__price'>{cardPrice} $</p>
         <p className='collection__title'>{photo.title}</p>
       </div>
       <Button

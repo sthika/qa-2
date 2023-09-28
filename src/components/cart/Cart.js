@@ -28,7 +28,7 @@ const Cart = () => {
                   <p className='cart__price'>Price: {el.price}$</p>
                 </div>
                 <div className='cart__value'>
-                  <p className='cart__value-count'>count: {el.count}$</p>
+                  <p className='cart__value-count'>count: {el.count}</p>
                   <p className='cart__value-price'>
                     total: {el.price * el.count}$
                   </p>

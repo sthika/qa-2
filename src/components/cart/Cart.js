@@ -1,12 +1,8 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import './cart.css';
-import Button from '../Button';
 import { ProductsContext } from '../../App';
 
-const Cart = ({ cartBtnIsActive }) => {
+const Cart = () => {
   const { products, setProducts } = useContext(ProductsContext);
 
   const removeAll = () => {
@@ -14,12 +10,11 @@ const Cart = ({ cartBtnIsActive }) => {
     localStorage.clear();
   };
 
+  return (
 
-  console.log('render');
-  return cartBtnIsActive ? (
-    <div className='header__cart'>
+    <section className='cart'>
       <div className='container'>
-        <h1 className='cart__header'>Корзина</h1>
+        <h1 className='section__title'>Корзина</h1>
         {products.length ? (
           <div className='cart__products'>
             {products.map((el, idx) => (
@@ -30,13 +25,12 @@ const Cart = ({ cartBtnIsActive }) => {
                 <div className='cart__desc'>
                   <p className='cart__product-name'>{el.title}</p>
 
-                  <p className='cart__price'>{el.price}</p>
+                  <p className='cart__price'>Price: {el.price}$</p>
                 </div>
                 <div className='cart__value'>
-                  <p className='cart__value-count'>count: {el.count}</p>
+                  <p className='cart__value-count'>count: {el.count}$</p>
                   <p className='cart__value-price'>
-                    {' '}
-                    total: {el.price * el.count}
+                    total: {el.price * el.count}$
                   </p>
                 </div>
               </div>
@@ -49,8 +43,8 @@ const Cart = ({ cartBtnIsActive }) => {
           <p className='section__subtitle'>Empty</p>
         )}
       </div>
-    </div>
-  ) : null;
+    </section>
+  ) ;
 };
 
 export default Cart;

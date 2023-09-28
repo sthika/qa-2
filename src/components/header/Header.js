@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, { useState, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import Button from '../Button';
 // import Input from '../Input';
@@ -9,11 +9,10 @@ import Cart from '../cart/Cart';
 const Header = () => {
   const [cartBtnIsActive, setCartBtnIsActive] = useState(false);
 
-  const setCartBtnState =() => {
+  const setCartBtnState = () => {
     setCartBtnIsActive(!cartBtnIsActive);
-    console.log("cart is open")
-  }
-  
+    console.log('cart is open');
+  };
 
   return (
     <header className='header'>
@@ -35,10 +34,9 @@ const Header = () => {
             Contact
           </NavLink>
 
-          <Button text={'Cart'} className={'header__cart-btn'} onClick={setCartBtnState} />
-          
-          <Cart cartBtnIsActive={cartBtnIsActive}
-          />
+          <NavLink to='/cart' className='header__link'>
+            <Button text={'Cart'} className={'header__cart-btn'} />
+          </NavLink>
         </nav>
 
         <HeaderMobile />

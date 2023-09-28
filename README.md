@@ -8,10 +8,7 @@ SPA в сфере электронной коммерции.
 
 ### Описание
 Используемые модули:
-emailjs/browser
-axios
-react-burger-menu
-react-router-dom
+emailjs/browser, axios, react-burger-menu, react-router-dom
 
 Запросы:
 

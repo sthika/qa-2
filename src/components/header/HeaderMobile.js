@@ -3,7 +3,6 @@ import { slide as Menu } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 import Button from '../Button';
 
-
 class HeaderMobile extends React.Component {
   showSettings(event) {
     event.preventDefault();
@@ -24,7 +23,9 @@ class HeaderMobile extends React.Component {
           FAQ
         </NavLink>
 
-        <Button text={'Log in'} />
+        <NavLink to='/cart' className='header__link'>
+            <Button text={'Cart'} className={'header__cart-btn'} />
+          </NavLink>
       </Menu>
       </div>
     );
